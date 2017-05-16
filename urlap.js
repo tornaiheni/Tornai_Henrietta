@@ -5,6 +5,7 @@ if (typeof window.addEventListener != "undefined") {
 } else { 
   window.onload = init;
 }
+var urlapv;
 function init(){
   urlapv = document.getElementById("urlap");
    var torolv = document.getElementById("torol");
@@ -19,7 +20,7 @@ function init(){
     urlapv.onsubmit = kuldes;
     torolv.onclick = torles;
   }
-kuldes(esemeny);
+//kuldes(esemeny);
 }
 
 function szulEv(){
@@ -36,24 +37,52 @@ function szulEv(){
   var ldiv = document.getElementById("listadiv");
   ldiv.appendChild(selectv);
 }
-function checkb(){
-  var checkTomb = getElementsByClass("chbi");
-  var checkTombMax = checkTomb.length;
-  var valasz = 0;
-  for (var i=0; i < checkTombMax; i++) {
-    if (checkTomb[i].checked) {
-           tetszettv++;
+function elsof(){
+  var szogv=0;
+  for (var i=0; i < urlapv.szog.length; i++) {
+    if (urlapv.szog[i].checked) {
+           szogv++;
     }
   }
-  if (tetszettv<1){
-    alert("Sajnalom, hogy semmi sem tetszett az oldalon!");
+  szogp = document.getElementById("elsofeladat");
+  if (szogv<1){
+    alert("Jelölje a válaszát!");
+    szogp.style.color = "#ff0000";
+    return false;
+  } else {
+    szogp.style.color = "#008080";
+    return true;
   }
-  return true;
+}
+function masodikf(){
+  var checkTomb = document.getElementsByClass("chbi");
+  alert("vfmk");
+  var valaszv = 0;
+  for (var i=0; i < checkTomb.length; i++) {
+    if (checkTomb[i].checked) {
+           valaszv++;
+    }
+  }
+  haromszogp = document.getElementById("masodikfeladat");
+  if (valaszv<1){
+    alert("Jelölje a válaszait!");
+    haromszogp.style.color = "#ff0000";
+    return false;
+  } else if (valaszv<3){
+	alert ("Mindhárom helyes megoldást jelölje!");
+	haromszogp.style.color = "#ff0000";
+	return false;
+	}else {
+	haromszogp.style.color = "#008080";
+    return true;
+	}
 }
 
 function kuldes(esemeny){
   var elkuld = true;
-  elkuld = elkuld && confirm("Biztosan elküldöd?");
+  elkuld = elkuld && elsof() && masodikf() && confirm("Biztosan elküldöd?");
+  //elkuld = elkuld && masodikf();
+  //elkuld = elkuld && confirm("Biztosan elküldöd?");
   if(!elkuld){
     if (typeof esemeny.preventDefault != "undefined"){
       esemeny.preventDefault();

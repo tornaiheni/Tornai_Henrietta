@@ -37,7 +37,7 @@ legend {
 	font-family: Courier Newsan,monospace;
 	float:left-bottom;
 }
-.chb{ 
+.chb, .rb{ 
 	margin: auto;
 }
 

@@ -31,7 +31,7 @@ function feldolgoz(){
    document.getElementById("Harmadikfeladat").innerHTML="&nbsp; "+t[6][1]+" cm"+"<br />";
    document.getElementById("Negyedikfeladat").innerHTML="&nbsp; "+t[7][1]+"<br />";
 
-   document.getElementById("Vissza").onclick = Vissza;
+   document.getElementById("Vissza").onclick = Vissza();
 }
 function Vissza(){
   history.back();
