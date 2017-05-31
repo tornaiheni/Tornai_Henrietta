@@ -1,0 +1,50 @@
+body { 
+	background-color: #C0C0C0;
+}
+label { 
+	margin: 0 5px 0 5px;
+	font-family:Courier Newsan,monospace;
+}
+h1 {color: #008080;
+	font-weight: bold;
+	font-family: Courier Newsan,monospace;
+ }
+fieldset{
+    margin-left: 10px;
+}
+textarea,.beadat,.ertek,p,div, #szuldat {
+	font-family:Courier Newsan,monospace;
+}
+legend {
+	font-weight: bold;
+	font-family:Courier Newsan,monospace;
+	color: #008080;
+	letter-spacing: 0.1em;
+}
+.adatok{
+	float:left-top;
+	margin-left: 10px;
+}
+.adatok legend{
+	color: #008080;
+	font-weight: bold;
+	font-family: Courier Newsan,monospace;
+	letter-spacing: 0.1em;
+}
+#elsofeladat,#masodikfeladat,#harmadikfeladat,#negyedikfeladat{
+	font-weight: bold;
+	color: #008080;
+	font-family: Courier Newsan,monospace;
+	float:left-bottom;
+}
+.chb, .rb{ 
+	margin: auto;
+}
+
+#torol, #elkuld {
+	margin: 5px 10px 0 0;
+	color: #f00;
+	font-weight: bold;
+	font-size: 20px;
+}
+
